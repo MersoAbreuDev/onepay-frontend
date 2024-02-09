@@ -28,8 +28,7 @@ export class LoginComponent {
         .subscribe({
           next: (userCredential: any) => {
             console.log('Usuário autenticado:', userCredential.user);
-            // Redirecionar para a página home após o login bem-sucedido
-            this.router.navigate(['estabelecimento/fisica-form']);
+            this.router.navigate(['home']);
           },
           error: (error) => {
             console.error('Erro de autenticação:', error.code, error.message);

@@ -1,0 +1,13 @@
+<div class="card flex justify-content-start"  *ngIf="mostrarMenu">  
+    <p-button (click)="toggleSidebar()" icon="pi pi-arrow-right"></p-button>
+    <p-sidebar [(visible)]="sidebarVisible">
+        <ul class="sidebar-menu" *ngIf="sidebarVisible">
+            <p-panelMenu [model]="items" [style]="{'width':'280px', 'color':'#074357'}"></p-panelMenu>
+        </ul>
+    </p-sidebar>
+    <ul class="sidebar-icons" *ngIf="!sidebarVisible">
+        <li *ngFor="let item of items" (click)="toggleSidebar()">
+            <i [ngClass]="item.icon" class="sidebar-icon"></i>
+        </li>
+    </ul>
+</div>

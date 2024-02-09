@@ -1,0 +1,30 @@
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+.title-module{
+ color: #1484c0;
+ font-size: 16px;
+ margin-top: 5px;
+}
+
+.p-fluid .p-inputtext{
+    margin-top: -14px;
+    height: 14px!important;
+    
+}
+
+label{
+    font-size: 12px;
+}
+
+.field{
+    margin-bottom: 7px;
+}
+
+

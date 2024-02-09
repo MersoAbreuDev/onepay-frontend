@@ -1,0 +1,92 @@
+<div class=" grid" style="width: 75%; display: flex;justify-content: center; margin-left: 15%;margin-top: 0;">
+    <form [formGroup]="form" (ngSubmit)="cadastrar()">
+        <div class="p-fluid p-formgrid grid">
+            <span class="title-module">Dados Cadastrais</span>
+            <div class="formgrid grid">
+                <div class="field col-12">
+                    <label>Tipo Estabelecimento</label>
+                    <p-dropdown  [options]="estabelecimento" formControlName="tipoEstabelecimentoId" name="id" value="id"  optionLabel='nome'
+                    placeholder="Selecione o tipo de estabelecimento"optionValue="nome"></p-dropdown>
+                </div>
+                <div class="field col-8">
+                    <label htmlFor="nome">Nome</label>
+                    <input formControlName="nome" pInputText id="nome" type="text" />
+                </div>
+                <div class="field col-4">
+                    <label for="dataNascimento">Data de Nascimento</label>
+                    <input formControlName="dataNascimento" pInputText id="dataNascimento" type="date" />
+                </div>
+                <div class="field col-6">
+                    <label for="celular">Celular</label>
+                    <input formControlName="celular" pInputText id="celular" type="tel" />
+                </div>
+                <div class="field col-6">
+                    <label for="email">Email</label>
+                    <input formControlName="email" pInputText id="email" type="email" />
+                </div>
+            </div>
+        </div>
+        <div class="p-fluid p-formgrid grid">
+            <span class="title-module">Endereço</span>
+            <div class="formgrid grid">
+                <div class="field col-9">
+                    <label htmlFor="logradouro">Logradouro</label>
+                    <input formControlName="logradouro" pInputText id="logradouro" type="text" />
+                </div>
+                <div class="field col-3">
+                    <label for="numero">Numero</label>
+                    <input formControlName="numero" pInputText id="numero" type="number" />
+                </div>
+                <div class="field col-3">
+                    <label for="cep">C.E.P</label>
+                    <input formControlName="cep" pInputText id="cep" type="text" cepMask />
+                </div>
+                <div class="field col-2">
+                    <label for="estado">Estado</label>
+                    <input formControlName="estado" pInputText id="estado" type="text" />
+                </div>
+                <div class="field col-4">
+                    <label for="cidade">Cidade</label>
+                    <input formControlName="cidade" pInputText id="cidade" type="text" />
+                </div>
+                <div class="field col-3">
+                    <label for="complemento">Complemento</label>
+                    <input formControlName="complemento" pInputText id="complemento" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="p-fluid p-formgrid grid">
+            <span class="title-module">Conta Bancária</span>
+            <div class="formgrid grid">
+                <div class="field col-4">
+                    <label htmlFor="bancoId">Banco</label>
+                    <input formControlName="bancoId" pInputText id="bancoId" type="text" />
+                </div>
+                <div class="field col-4">
+                    <label for="agencia">Agencia</label>
+                    <input formControlName="agencia" pInputText id="agencia" type="number" />
+                </div>
+                <div class="field col-4">
+                    <label for="conta">Conta</label>
+                    <input formControlName="conta" pInputText id="conta" type="text" />
+                </div>
+                <div class="field col-6">
+                    <label for="nomeTitular">Nome Titular</label>
+                    <input formControlName="nomeTitular" pInputText id="nomeTitular" type="text" />
+                </div>
+                <div class="field col-3">
+                    <label for="tipoContaBancaria">Tipo de Conta Bancária</label>
+                    <input formControlName="tipoContaBancaria" pInputText id="tipoContaBancaria" type="text" />
+                </div>
+                <div class="field col-3">
+                    <label for="identificadorPlano">Plano</label>
+                    <input formControlName="identificadorPlano" pInputText id="identificadorPlano" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="p-fluid p-formgrid col-12" style="text-align: center;">
+            <button [disabled]="!form.valid"  class="p-button-success"  style="width: 25%;height: 38px;" type="submit" pButton icon="pi pi-save" label="Salvar"></button>
+            <button class="p-button-danger"  style="width: 25%;margin-left: 15px;height: 38px;" type="submit" pButton icon="pi pi-times" label="Cancelar"></button>
+        </div>
+    </form>
+</div>

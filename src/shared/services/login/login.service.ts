@@ -11,47 +11,50 @@ import {AngularFireAuth} from '@angular/fire/compat/auth';
 export class LoginService {
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
-  returnUrl:string="";
-  private isAuthenticated = new BehaviorSubject<boolean>(false)
-  mostrarMenuEmitter = new EventEmitter<boolean>();
-  user$: Observable<firebase.default.User | null>;
-  auth = inject(AngularFireAuth); 
-  
-    constructor(private http: HttpClient, 
-                private router : Router,
-                private afAuth: AngularFireAuth
-               ) {
-        this.user$ = afAuth.authState;
-        this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')!));
-        this.currentUser = this.currentUserSubject.asObservable();
-    }
+  returnUrl: string = "";
+  private isAuthenticated = new BehaviorSubject<boolean>(false);
 
-    public get currentUserValue(): any {
-        return this.currentUserSubject.getValue();
+  constructor(private http: HttpClient, private router: Router, private afAuth: AngularFireAuth) {
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
+    this.currentUser = this.currentUserSubject.asObservable();
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        this.isAuthenticated.next(true);
+      } else {
+        localStorage.removeItem('currentUser');
+        this.isAuthenticated.next(false);
+      }
+    });
+  }
+
+  public get currentUserValue(): any {
+    return this.currentUserSubject.value;
   }
 
   get isAuthenticated$() {
-    if(localStorage.getItem('currentUser')!=null){
-      this.isAuthenticated.next(true);
-    }
     return this.isAuthenticated.asObservable();
   }
 
   login(usuario: any) {
     return from(this.afAuth.signInWithEmailAndPassword(usuario.email, usuario.password))
-    .pipe(
-      map(data=>{
-        this.currentUserSubject.next(data);
-        this.isAuthenticated.next(true);
-        return data;
-      }),
-      catchError((err) => {
-        if (err.status === 403) {
-          console.log("Erro")
-        }
-        return throwError(() => err);
-      })
-    );
+      .pipe(
+        map(data => {
+          this.currentUserSubject.next(data.user);
+          return data;
+        }),
+        catchError((err) => {
+          if (err.status === 403) {
+            console.log("Erro");
+          }
+          return throwError(() => err);
+        })
+      );
   }
 
+  logout(): Promise<void> {
+    return this.afAuth.signOut().then(() => {
+      this.router.navigate(['/login']);
+    });
+  }
 }

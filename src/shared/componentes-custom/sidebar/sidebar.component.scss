@@ -10,25 +10,39 @@
   margin-right: 10px; /* Adiciona um espaço entre o ícone e o texto */
   padding-bottom: 25px;
   display: inline-block;
+  
 }
 
 .sidebar-icons{
     width: 50px;
     margin: 0;
     padding: 0;
-    margin-top: 60px;
+    margin-top: 15px;
     position: fixed;
+
 }
 
 .sidebar-icons li{
     text-align: left;
+    margin-left: 10px;
+  
 }
 
 .sidebar-menu{
     margin: 0;
     padding: 0;
+   
 }
 
-.sidebar-icon {
-  font-size: 28px; /* Define o tamanho dos ícones para 24px */
+.menu-icon, .sidebar-icon{
+  font-size: 28px; 
 }
+
+.menu-icon {
+  color: red; 
+}
+
+.menu-icon {
+  cursor: pointer; 
+}
+

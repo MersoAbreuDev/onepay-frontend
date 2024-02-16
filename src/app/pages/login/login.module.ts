@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponetesCustomModule } from '../../../shared/componentes-custom/componetes-custom.module';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -18,6 +19,9 @@ import { ComponetesCustomModule } from '../../../shared/componentes-custom/compo
     FormsModule,
     ReactiveFormsModule,
     ComponetesCustomModule
+  ],
+  providers:[
+    MessageService
   ]
 })
 export class LoginModule { }

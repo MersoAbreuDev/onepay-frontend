@@ -11,37 +11,60 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SidebarComponent {
   sidebarVisible: boolean = false;
-  menu!: MenuItem[];
+  menuItems!: MenuItem[];
   items!: MenuItem[];
-  mostrarMenu: boolean = false;
-  currentUserSubject: any;
-  currentUser: any;
+  mostrarMenu!: boolean;
 
   constructor(private router: Router,
     private loginService: LoginService){
-    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')!));
-    this.currentUser = this.currentUserSubject.asObservable();
 }
 
   ngOnInit(){
-    this.loginService.isAuthenticated$.subscribe(isAuthenticated => {
-      this.mostrarMenu = isAuthenticated;
-      console.log("Menu ",isAuthenticated );
+    console.log('Initializing Sidebar Component');
+  this.mostrarMenu = JSON.parse(localStorage.getItem('mostrarMenu') || 'false');
+  console.log('mostrarMenu:', this.mostrarMenu);
+  
+  this.loginService.isAuthenticated$.subscribe(isAuthenticated => {
+    console.log('Authentication status changed:', isAuthenticated);
+    this.mostrarMenu = isAuthenticated;
+    localStorage.setItem('mostrarMenu', JSON.stringify(this.mostrarMenu));
+    console.log('mostrarMenu updated and stored:', this.mostrarMenu);
     });
-    this.items = [
-      {
-          label: 'Cadastros',
-          icon: 'pi pi-file-edit',
+
+      this.items = [
+        {
+            label: 'Cadastros',
+            icon: 'pi pi-file-edit',
+            title: 'Cadastros',
+            items: [
+                {
+                    label: 'Estabelecimento',
+                    icon: 'pi pi-users',
+                    items: [
+                        {
+                            label: 'Novo',
+                            icon: 'pi pi-plus',
+                            routerLink:'estabelecimento/fisica-form',
+                        },
+                        {
+                            label: 'Consultar',
+                            icon: 'pi pi-search',
+                            routerLink:'receitas',
+                        }
+                    ],
+                    
+                }
+            ],
+        }, 
+        {
+          label: 'Planos',
+          icon: 'pi pi-verified',
+          title: 'Planos',
           items: [
               {
-                  label: 'Estabelecimento',
+                  label: 'Planos',
                   icon: 'pi pi-users',
                   items: [
-                      {
-                          label: 'Novo',
-                          icon: 'pi pi-plus',
-                          routerLink:'estabelecimento/fisica-form',
-                      },
                       {
                           label: 'Consultar',
                           icon: 'pi pi-search',
@@ -50,14 +73,49 @@ export class SidebarComponent {
                   ],
                   
               }
-          ]
-          
+          ],
+        }, 
+        {
+          label: 'Usuários',
+          icon: 'pi pi-users',
+          title: 'Usuários',
+          items: [
+              {
+                  label: 'Usuários',
+                  icon: 'pi pi-users',
+                  items: [
+                    {
+                      label: 'Cadastrar',
+                      icon: 'pi pi-search',
+                      routerLink:'receitas',
+                    },
+                      {
+                          label: 'Consultar',
+                          icon: 'pi pi-search',
+                          routerLink:'receitas',
+                      }
+                  ],
+              }
+          ],
       }, 
-  ];
+    ];
+    this.menuItems = [
+      {
+        label: 'Quit',
+        icon: 'pi pi-fw pi-power-off',
+        command: () => { this.logout() }
+      }
+    ]
   }
 
   toggleSidebar() {
     this.sidebarVisible = !this.sidebarVisible;
+  }
+
+  logout() {
+   this.loginService.logout();
+    this.mostrarMenu = false;
+    localStorage.setItem('mostrarMenu', JSON.stringify(this.mostrarMenu));
   }
 
   

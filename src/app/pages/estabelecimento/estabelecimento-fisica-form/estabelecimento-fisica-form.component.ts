@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-estabelecimento-fisica-form',
@@ -8,7 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EstabelecimentoFisicaFormComponent{
   form!: FormGroup;
-  items= "Estabelecimento";
+  items!: MenuItem[] | undefined;
+
+  home: MenuItem | undefined;
+
   estabelecimento:any=
    [
     {id:0, nome:"Fisico"},
@@ -18,6 +22,10 @@ export class EstabelecimentoFisicaFormComponent{
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+      this.items = [{ label: 'Home' },{ label: 'Cadastro Estabelecimento' }];
+
+      this.home = { icon: 'pi pi-home', routerLink: '/home' };
+
     this.criarFormulario()
   }
 

@@ -1,4 +1,8 @@
+<div  style="display: flex; margin-left: 15%;margin-top: 0;margin-bottom: 15px;" class="card flex justify-content-start">
+    <p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+</div>
 <div class=" grid" style="width: 75%; display: flex;justify-content: center; margin-left: 15%;margin-top: 0;">
+  
     <form [formGroup]="form" (ngSubmit)="cadastrar()">
         <div class="p-fluid p-formgrid grid">
             <span class="title-module">Dados Cadastrais</span>

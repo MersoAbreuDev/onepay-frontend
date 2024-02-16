@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { LoginService } from '../../../../shared/services/login/login.service';
 import { Router } from '@angular/router';
 import { User } from '../../../../shared/models/user/user';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent {
     password:new FormControl('',[Validators.required])
   })
   
+  messageService = inject(MessageService);
   firebase = inject(LoginService);
   router = inject(Router);
   ngOnInit(){    
@@ -32,9 +34,9 @@ export class LoginComponent {
           },
           error: (error) => {
             console.error('Erro de autenticação:', error.code, error.message);
+            this.messageService.add({severity:'error', summary:'Erro de autenticação', detail:'Login ou senha incorretos'});
           },
           complete: () => {
-            // Executar ações adicionais quando a operação estiver completa, se necessário
           }
         });
     }

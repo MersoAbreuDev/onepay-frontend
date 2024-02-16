@@ -4,25 +4,25 @@ import { AuthGuard } from '../shared/guards/auth/auth.guard';
 
 
 const routes: Routes = [
-      {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
-      },
-      { 
-        path: 'login',
-        loadChildren: () => import('../app/pages/login/login.module').then( m => m.LoginModule)
-      },
-      { 
-        path: 'home',
-        loadChildren: () => import('../app/pages/home/home.module').then( m => m.HomeModule)
-      },
-      {
-        path: 'estabelecimento',
-        loadChildren: () => import('./pages/estabelecimento/estabelecimento.module').then( m => m.EstabelecimentoModule),
-        canLoad: [AuthGuard]
-      },
-
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  { 
+    path: 'login',
+    loadChildren: () => import('../app/pages/login/login.module').then( m => m.LoginModule)
+  },
+  { 
+    path: 'home',
+    loadChildren: () => import('../app/pages/home/home.module').then( m => m.HomeModule),
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'estabelecimento',
+    loadChildren: () => import('./pages/estabelecimento/estabelecimento.module').then( m => m.EstabelecimentoModule),
+    canLoad: [AuthGuard]
+  },
 ];
 
 @NgModule({

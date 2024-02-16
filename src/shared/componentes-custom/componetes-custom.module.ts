@@ -26,6 +26,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonCustomComponent } from './button-custom/button-custom.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { MenubarModule } from 'primeng/menubar';
+
 
 @NgModule({
   declarations: [
@@ -59,12 +61,14 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    MenubarModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA],
   exports:[
     SidebarComponent,
+    ToastModule,
     DropdownModule,
     CardModule,
     CalendarModule,
@@ -76,7 +80,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     InputTextModule,
     ButtonModule,
     ButtonCustomComponent,
-    BreadcrumbModule
+    BreadcrumbModule,
+    MenubarModule
   ]
 })
 export class ComponetesCustomModule { }

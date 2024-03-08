@@ -33,13 +33,19 @@ export class SidebarComponent {
 
       this.items = [
         {
+          label: 'Home',
+          icon: 'pi pi-home',
+          title: 'Home',
+          routerLink:'home',
+        }, 
+        {
             label: 'Cadastros',
             icon: 'pi pi-file-edit',
             title: 'Cadastros',
             items: [
                 {
                     label: 'Estabelecimento',
-                    icon: 'pi pi-users',
+                    icon: 'pi pi-file-edit',
                     items: [
                         {
                             label: 'Novo',
@@ -49,7 +55,7 @@ export class SidebarComponent {
                         {
                             label: 'Consultar',
                             icon: 'pi pi-search',
-                            routerLink:'receitas',
+                            routerLink:'estabelecimento/table',
                         }
                     ],
                     
@@ -62,16 +68,9 @@ export class SidebarComponent {
           title: 'Planos',
           items: [
               {
-                  label: 'Planos',
-                  icon: 'pi pi-users',
-                  items: [
-                      {
-                          label: 'Consultar',
-                          icon: 'pi pi-search',
-                          routerLink:'receitas',
-                      }
-                  ],
-                  
+                  label: 'Consulta Planos',
+                  icon: 'pi pi-search',
+                  routerLink:'receitas',
               }
           ],
         }, 
@@ -80,22 +79,17 @@ export class SidebarComponent {
           icon: 'pi pi-users',
           title: 'Usuários',
           items: [
+            {
+              label: 'Cadastrar',
+              icon: 'pi pi-plus',
+              routerLink:'',
+            },
               {
-                  label: 'Usuários',
-                  icon: 'pi pi-users',
-                  items: [
-                    {
-                      label: 'Cadastrar',
-                      icon: 'pi pi-search',
-                      routerLink:'receitas',
-                    },
-                      {
-                          label: 'Consultar',
-                          icon: 'pi pi-search',
-                          routerLink:'receitas',
-                      }
-                  ],
+                  label: 'Consultar',
+                  icon: 'pi pi-search',
+                  routerLink:'',
               }
+               
           ],
       }, 
     ];

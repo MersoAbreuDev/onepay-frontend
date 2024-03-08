@@ -4,7 +4,7 @@
         <!-- Lado esquerdo da tela com a imagem -->
         <div class="col-8" style="background-color: #f0f0f0; height: 100%;">
             <!-- Adicione sua imagem aqui -->
-            <img src="../../../../assets/img_png/login.png" alt="Imagem" style="width: 100%; height: 100%;">
+            <img src="../../../../assets/login.png" alt="Imagem" style="width: 100%; height: 100%;">
         </div>
         
         <!-- Lado direito da tela com o formulário -->
@@ -22,10 +22,15 @@
                                 <label for="float-input">Digite sua senha</label>
                             </span>
 
-                            <button [disabled]="!form.valid" pButton type="submit" label="Entrar" class="p-button p-button-rounded p-button-lg" style="background-color: orange;margin-top: 25px;border: 0;"></button>
+                            <button [disabled]="!form.valid" pButton type="submit" label="Entrar" class="p-button p-button-rounded p-button-lg" style="background-color: #0f3387;margin-top: 25px;border: 0;"></button>
                         </form>
                     </div>
                 </div>
+            </div>
+            <!-- Links abaixo do formulário -->
+            <div class="links" style="text-align: center; margin-top: 10px;">
+                <a routerLink="/esqueci-senha" class="forgot-password-link">Esqueci minha senha</a>
+                <a routerLink="/signup" class="register-link">Cadastre-se</a>
             </div>
         </div>
     </div>

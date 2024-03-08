@@ -27,12 +27,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonCustomComponent } from './button-custom/button-custom.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { MenubarModule } from 'primeng/menubar';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { CustomCardComponent } from './custom-card/custom-card.component';
+import { StepsModule } from 'primeng/steps';
 
 @NgModule({
   declarations: [
     SidebarComponent,
-    ButtonCustomComponent
+    ButtonCustomComponent,
+    CustomCardComponent
   ],
   imports: [
     CardModule,
@@ -62,7 +69,13 @@ import { MenubarModule } from 'primeng/menubar';
     ReactiveFormsModule,
     CommonModule,
     BreadcrumbModule,
-    MenubarModule
+    MenubarModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatSidenavModule,
+    StepsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA],
@@ -81,7 +94,11 @@ import { MenubarModule } from 'primeng/menubar';
     ButtonModule,
     ButtonCustomComponent,
     BreadcrumbModule,
-    MenubarModule
+    MenubarModule,
+    TableModule,
+    CustomCardComponent,
+    CardModule,
+    StepsModule
   ]
 })
 export class ComponetesCustomModule { }

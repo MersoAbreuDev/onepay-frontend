@@ -19,6 +19,14 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
+    path: 'esqueci-senha',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordModule),
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupModule),
+  },
+  {
     path: 'estabelecimento',
     loadChildren: () => import('./pages/estabelecimento/estabelecimento.module').then( m => m.EstabelecimentoModule),
     canLoad: [AuthGuard]

@@ -1,0 +1,80 @@
+<div class="register-container">
+    <div class="image-container">
+      <!-- Sua imagem aqui -->
+      <img src="../../../assets/signup.png" alt="Imagem" class="image">
+    </div>
+    <div class="steps-container">
+      <mat-card class="register-card">
+        <mat-card-content>
+        <mat-vertical-stepper [linear]="isLinear" #stepper class="stepper">
+          <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Criação da conta de usuário</ng-template>
+            <form [formGroup]="firstFormGroup">
+              <mat-form-field appearance="outline" class="custom-input">
+                <mat-label>Nome de usuário</mat-label>
+                <input matInput formControlName="firstCtrl" placeholder="Seu nome de usuário" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext color="primary">Próximo</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <ng-template matStepLabel>Informe os dados para criar seu usuário</ng-template>
+            <form [formGroup]="secondFormGroup">
+              <mat-form-field appearance="outline" class="custom-input">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="secondCtrl" placeholder="Seu email" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious color="primary">Anterior</button>
+                <button mat-button matStepperNext color="primary">Próximo</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Validação de E-mail e Celular</ng-template>
+            <p>Iremos validar seu e-mail e seu celular.</p>
+            <div>
+              <button mat-button matStepperPrevious color="primary">Anterior</button>
+              <button mat-button matStepperNext color="primary">Próximo</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Configuração da conta</ng-template>
+            <p>Escolha o tipo e a modalidade da conta.</p>
+            <div>
+              <button mat-button matStepperPrevious color="primary">Anterior</button>
+              <button mat-button matStepperNext color="primary">Próximo</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Dados básicos e endereço</ng-template>
+            <p>Informações básicas da conta.</p>
+            <div>
+              <button mat-button matStepperPrevious color="primary">Anterior</button>
+              <button mat-button matStepperNext color="primary">Próximo</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Informações básicas da conta</ng-template>
+            <p>Informações básicas da conta.</p>
+            <div>
+              <button mat-button matStepperPrevious color="primary">Anterior</button>
+              <button mat-button matStepperNext color="primary">Próximo</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Confirmação dos dados</ng-template>
+            <p>Confirme os dados e conclua o cadastro.</p>
+            <div>
+              <button mat-button matStepperPrevious color="primary">Anterior</button>
+              <button mat-button (click)="stepper.reset()">Reiniciar</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+    </mat-card-content>
+</mat-card>
+</div>
+</div>
+  

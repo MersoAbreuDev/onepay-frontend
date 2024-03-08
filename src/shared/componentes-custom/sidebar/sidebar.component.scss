@@ -19,6 +19,7 @@
     padding: 0;
     margin-top: 15px;
     position: fixed;
+    color: #0f3387;
 
 }
 
@@ -46,3 +47,19 @@
   cursor: pointer; 
 }
 
+.sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-nav-list a {
+  color: #333;
+  text-decoration: none;
+}
+
+mat-nav-list a:hover {
+  background-color: #f0f0f0;
+}

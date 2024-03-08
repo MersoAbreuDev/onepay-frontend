@@ -1,23 +1,21 @@
-
-<p-menubar [style]="{'margin-bottom':'10px'}" *ngIf="mostrarMenu">
+<p-menubar [style]="{'margin-bottom':'10px', 'background':'#0f3387'}" *ngIf="mostrarMenu">
     <ng-template pTemplate="start">
-        <p-button pTooltip="Menu" [style]="{'background':'#cccc', 'border':'0', 'width':'100px'}" (click)="toggleSidebar()">
-            <i class="pi pi-bars" style="margin-right: 5px;"></i>
-            Menu
+        <p-button pTooltip="Menu" [style]="{'background':'#cccc', 'border':'0'}" (click)="toggleSidebar()">
+            <i class="pi pi-bars"></i>
         </p-button>
     </ng-template>
     <ng-template pTemplate="end">
         <i (click)="logout()" class="pi pi-fw pi-power-off menu-icon"></i>
     </ng-template>
-</p-menubar> 
+</p-menubar>
+
 <div *ngIf="mostrarMenu">
-    <p-sidebar class="sidebar-custom" [(visible)]="sidebarVisible" [style]="{'border': '0.5px black'}">
-        <ul class="sidebar-menu" *ngIf="sidebarVisible">
-            <p-panelMenu [model]="items"  [style]="{'width':'280px', 'color':'#074357'}"></p-panelMenu>
+    <p-sidebar [(visible)]="sidebarVisible" [style]="{'width': '280px', 'border': '0.5px solid black'}">
+        <ul class="sidebar-menu">
+            <p-panelMenu [model]="items" [style]="{'color':'#074357'}"></p-panelMenu>
         </ul>
     </p-sidebar>
     <ul class="sidebar-icons" *ngIf="!sidebarVisible">
-       
         <li *ngFor="let item of items" (click)="toggleSidebar()">
             <i [ngClass]="item.icon" [pTooltip]="item.title" class="sidebar-icon"></i>
         </li>

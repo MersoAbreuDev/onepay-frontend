@@ -1,0 +1,38 @@
+<!-- app.component.html -->
+
+<h1 class="title">Filtros</h1>
+<div class="filter-container">
+  <form [formGroup]="filterForm" (ngSubmit)="search()" class="filter-form">
+    <div class="filter-row">
+      <p-calendar placeholder="Data" formControlName="date" class="filter-input"></p-calendar>
+      <p-dropdown placeholder="Tipo" [options]="types" formControlName="type" class="filter-dropdown"></p-dropdown>
+      <input type="text" placeholder="Conta" formControlName="account" class="p-inputtext p-component filter-input">
+      <input type="text" placeholder="CPF/CNPJ" formControlName="cpfCnpj" class="p-inputtext p-component filter-input">
+      <button type="button" (click)="clearFilters()" pButton class="p-button filter-button">Limpar Pesquisa</button>
+      <button type="submit" pButton class="p-button filter-button">Buscar</button>
+    </div>
+  </form>
+</div>
+
+<div class="table-container" style="margin-top: 25px;">
+  <p-table [columns]="cols" [value]="filteredData" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,20,50]"
+    [resizableColumns]="true" [responsive]="true" [autoLayout]="true" class="p-datatable table-config" >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td>{{rowData.date}}</td>
+        <td>{{rowData.value}}</td>
+        <td>{{rowData.status}}</td>
+        <td>{{rowData.type}}</td>
+        <td>{{rowData.account}}</td>
+        <td>{{rowData.cpfCnpj}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

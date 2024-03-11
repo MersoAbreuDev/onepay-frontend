@@ -5,6 +5,10 @@
         </p-button>
     </ng-template>
     <ng-template pTemplate="end">
+        <!-- Avatar -->
+        <button pButton type="button" icon="pi pi-user" (click)="openUserInfoModal()" class="p-button-rounded p-button-text"></button>
+
+        <!-- Botão de logout -->
         <i (click)="logout()" class="pi pi-fw pi-power-off menu-icon"></i>
     </ng-template>
 </p-menubar>

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { LoginService } from '../../services/login/login.service';
-import { BehaviorSubject } from 'rxjs';
+import { DialogService } from 'primeng/dynamicdialog';
+import { UserInfoComponent } from '../user-info/user-info.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,14 +17,30 @@ export class SidebarComponent {
   mostrarMenu!: boolean;
 
   constructor(private router: Router,
-    private loginService: LoginService){
+    private loginService: LoginService,
+    private dialogService: DialogService){
 }
+
+  openUserInfoModal() {
+    // Abre o modal de informações do usuário
+    this.dialogService.open(UserInfoComponent, {
+      header: 'Informações do Usuário',
+      width: '20%',
+      contentStyle: {
+        'max-height': '15%',
+        'overflow-y': 'auto',
+        'top': '50px',
+        'right': '20px' 
+      }
+    });
+  }
 
   ngOnInit(){
     console.log('Initializing Sidebar Component');
   this.mostrarMenu = JSON.parse(localStorage.getItem('mostrarMenu') || 'false');
   console.log('mostrarMenu:', this.mostrarMenu);
   
+
   this.loginService.isAuthenticated$.subscribe(isAuthenticated => {
     console.log('Authentication status changed:', isAuthenticated);
     this.mostrarMenu = isAuthenticated;

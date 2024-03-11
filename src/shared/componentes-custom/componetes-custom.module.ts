@@ -34,11 +34,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { CustomCardComponent } from './custom-card/custom-card.component';
 import { StepsModule } from 'primeng/steps';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { DialogService } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
     SidebarComponent,
     ButtonCustomComponent,
+    UserInfoComponent,
     CustomCardComponent
   ],
   imports: [
@@ -76,6 +79,8 @@ import { StepsModule } from 'primeng/steps';
     MatListModule,
     MatSidenavModule,
     StepsModule
+  ], providers: [
+    DialogService
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA],
@@ -98,7 +103,9 @@ import { StepsModule } from 'primeng/steps';
     TableModule,
     CustomCardComponent,
     CardModule,
-    StepsModule
+    StepsModule,
+    UserInfoComponent,
+    DialogModule
   ]
 })
 export class ComponetesCustomModule { }

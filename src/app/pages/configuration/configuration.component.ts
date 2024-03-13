@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-configuration',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ConfigurationComponent {
 
-}
+  form!:FormGroup;
+
+  }
+
+
+
+

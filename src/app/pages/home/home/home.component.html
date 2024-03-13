@@ -1,22 +1,86 @@
 <h1 style="margin-left: 80px;">Olá seja bem vindo!</h1>
 <div >
     <div class="row" style="display: flex; flex-wrap: wrap; margin-left: 120px;">
-        <app-custom-card header="Exemplo de Card" width="450px" height="200px" margin="25px">
-            Conteúdo do card aqui...
+        <app-custom-card header="Total de Vendas" width="200px" height="125px" margin="15px">
+           <h5 style="font-weight: 600; font-size: 32px;">58</h5>
         </app-custom-card>
-        <app-custom-card header="Exemplo de Card" width="450px" height="200px" margin="25px">
-            Conteúdo do card aqui...
+        <app-custom-card header="Valor total de Vensdas"  width="250px" height="125px" margin="15px">
+            <h5 style="font-weight: 600; font-size: 32px;">R$ 9.569,86</h5>
         </app-custom-card>
-        <app-custom-card header="Exemplo de Card" width="450px" height="200px" margin="25px">
-            Conteúdo do card aqui...
+        <app-custom-card header="Valor MarkUp" width="200px" height="125px" margin="15px">
+            <h5 style="font-weight: 600; font-size: 32px;">R$ 17,86</h5> 
+        </app-custom-card>
+        <app-custom-card header="Vamor de Comissão" width="200px" height="125px" margin="15px">
+            <h5 style="font-weight: 600; font-size: 32px;">R$ 4,47</h5>
+        </app-custom-card>
+        <app-custom-card header="Comissão" width="200px" height="125px" margin="15px">
+            <h5 style="font-weight: 600; font-size: 32px;"> 25,00%</h5>
         </app-custom-card>
     </div>
-    <div class="row" style=" display: flex; flex-wrap: wrap;margin-left: 120px;">
-        <app-custom-card header="Exemplo de Card" width="500px" height="200px" margin="10px">
-            Conteúdo do card aqui...
+    <div class="row" style="display: flex; flex-wrap: wrap; margin-left: 120px;">
+        <app-custom-card header="Por Estabelecimento" width="550px" height="250px" margin="15px">
+            <p-table [value]="estabelecimentos" [virtualRowHeight]="16" [scrollable]="true" [scrollHeight]="'180px'">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="font-size: 12px;">Estabelecimento</th>
+                        <th style="font-size: 12px;">Valor Markup</th>
+                        <th style="font-size: 12px;">Valor de Comissão</th>
+                        <th style="font-size: 12px;">Comissão</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-estabelecimento>
+                    <tr>
+                        <td style="font-size: 12px;">{{estabelecimento.estabelecimento}}</td>
+                        <td style="font-size: 12px;">R$ {{estabelecimento.valorMarkup}}</td>
+                        <td style="font-size: 12px;">R$ {{estabelecimento.valorComissao}}</td>
+                        <td style="font-size: 12px;">{{estabelecimento.comissao}}%</td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </app-custom-card>
-        <app-custom-card header="Exemplo de Card" width="500px" height="200px" margin="10px">
-            Conteúdo do card aqui...
+        <app-custom-card header="Valor total de Vendas"  width="550px" height="250px" margin="15px">
+            <ng-container *ngIf="mostrarPorBandeira" style="text-align: center;">
+                <button pButton type="button" style="height: 35px; margin-right: 25px;" (click)="filtrarPorBandeira()" label="Por Bandeira"></button>
+                <button pButton type="button" style="height: 35px;" (click)="mostrarPorBandeira = false" label="Por Tipo de Pagamento"></button>
+            </ng-container>
+            <ng-container *ngIf="!mostrarPorBandeira" style="text-align: center;">
+                <button pButton type="button" style="height: 35px; margin-right: 25px;" (click)="filtrarPorTipoPagamento()" label="Por Tipo de Pagamento"></button>
+                <button pButton type="button" style="height: 35px;" (click)="mostrarPorBandeira = true" label="Por Bandeira"></button>
+            </ng-container>
+        
+            <p-table *ngIf="mostrarPorBandeira" [value]="informacoesPorBandeira" [virtualRowHeight]="16" [scrollable]="true" [scrollHeight]="'160px'">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="font-size: 12px;">Bandeira</th>
+                        <th style="font-size: 12px;">Valor Markup</th>
+                        <th style="font-size: 12px;">Valor de Comissão</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-informacao>
+                    <tr>
+                        <td style="font-size: 12px;">{{ informacao.nome }}</td>
+                        <td style="font-size: 12px;">R$ {{ informacao.valorMarkup }}</td>
+                        <td style="font-size: 12px;">{{ informacao.valorComissao }}%</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        
+            <p-table *ngIf="!mostrarPorBandeira" [value]="informacoesPorTipoPagamento" [virtualRowHeight]="16" [scrollable]="true" [scrollHeight]="'160px'">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="font-size: 12px;">Tipo de Pagamento</th>
+                        <th style="font-size: 12px;">Valor Markup</th>
+                        <th style="font-size: 12px;">Valor de Comissão</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-informacao>
+                    <tr>
+                        <td style="font-size: 12px;">{{ informacao.nome }}</td>
+                        <td style="font-size: 12px;">R$ {{ informacao.valorMarkup }}</td>
+                        <td style="font-size: 12px;">{{ informacao.valorComissao }}%</td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </app-custom-card>
     </div>
 </div>

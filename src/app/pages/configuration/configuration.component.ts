@@ -27,7 +27,7 @@ export class ConfigurationComponent {
         alert("As senhas não coincidem. Por favor, verifique.");
     }else {
  // Limpar os campos do formulário
-  this.form.reset();
+    this.form.reset();
     }
     }
   }

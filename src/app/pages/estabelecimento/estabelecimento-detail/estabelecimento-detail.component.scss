@@ -94,6 +94,41 @@ input {
 
 }
 
+.formgrid3 {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 270px;
+  transition: all 0.3s ease-out;
+
+
+}
+
+.formgrid3:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+.formgrid4 {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 270px;
+  transition: all 0.3s ease-out;
+
+
+}
+
+.formgrid4:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+
 
 .card-container {
   display: flex; /* Torna o contêiner flexível */

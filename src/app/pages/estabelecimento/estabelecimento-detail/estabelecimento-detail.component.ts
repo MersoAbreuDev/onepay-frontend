@@ -10,6 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class EstabelecimentoDetailComponent {
 
   formEstabelecimento!:FormGroup;
+  formEndereco!:FormGroup;
   isEditing: boolean = false;
 
   form = new FormGroup({

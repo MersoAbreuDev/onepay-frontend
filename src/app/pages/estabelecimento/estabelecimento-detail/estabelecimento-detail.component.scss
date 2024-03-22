@@ -77,3 +77,36 @@ input {
 }
 
 
+.formgrid2 {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 70px;
+  transition: all 0.3s ease-out;
+
+
+}
+
+.formgrid2:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+
+.card-container {
+  display: flex; /* Torna o contêiner flexível */
+  justify-content: space-between; /* Distribui os cards uniformemente ao longo do contêiner */
+  margin-left: 5%; /* Margem à esquerda */
+  margin-top: 0;
+  width: 90%; /* Largura do contêiner */
+}
+
+.card {
+  width: calc(50% - 10px); /* Largura de cada card (50% da largura do contêiner menos espaçamento) */
+  margin-bottom: 20px; /* Espaçamento entre os cards */
+  border: 1px solid #ccc; /* Borda para os cards */
+  padding: 20px; /* Espaçamento interno dos cards */
+  box-sizing: border-box; /* Garante que a largura dos cards inclua a espessura da borda */
+}

@@ -1,3 +1,4 @@
+<div class="card-container">
 <div class="grid" style="width: 75%; display: flex; margin-left: 5%; margin-top: 0;">
 
   <form [formGroup]="formEstabelecimento" *ngIf="!isEditing; else editingMode">
@@ -101,4 +102,112 @@
       </div>
     </form>
   </ng-template>
+</div>
+
+
+<div class="grid" style="width: 75%; display: flex; margin-left: 5%; margin-top: 0;">
+
+  <form [formGroup]="formEndereco" *ngIf="!isEditing; else editingMode">
+    <div class="p-fluid p-formgrid grid">
+      <div class="formgrid grid2">
+
+        <span class="title-module">ESTABELECIMENTO</span><br/>
+
+        <div class="field col-8">
+          <label htmlFor="nomeFantasia">NOME FANTASIA</label><br/>
+          <label htmlFor="">A2 VIAGENS E PASSEIOS</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="razaoSocial">RAZÃO SOCIAL</label><br/>
+          <label htmlFor="">A2 VIAGENS E PASSEIOS LTDA</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="cnpj">CNPJ</label><br/>
+          <label htmlFor="">39.298.360/0001-57</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="email">EMAIL</label><br/>
+          <label htmlFor="">a2viagens.alexandre&#64;gmail.com</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="telefone">TELEFONE</label><br/>
+          <label htmlFor="">(11) 4033-6162</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="categoriaNegocio">CATEGORIA DO NEGÓCIO</label><br/>
+          <label htmlFor="">Agência de Viagens e Operações de Turismo</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="dataCriacao">DATA DE CRIAÇÃO</label><br/>
+          <label htmlFor="">02/08/2022</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="nomeComprovante">NOME NO COMPROVANTE</label><br/>
+          <label htmlFor="">A2 VIAGENS E PASSEIOS</label><br/>
+        </div>
+
+        <div style="width: 100%; text-align: center;">
+          <button pButton type="button" (click)="toggleEdit()" class="p-button" style="margin-top: 5px;border: 0; width: 100px;text-align: center;">Editar</button><br/>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <ng-template #editingMode>
+    <form [formGroup]="formEndereco">
+      <div class="p-fluid p-formgrid grid">
+        <div class="formgrid grid2">
+
+          <span class="title-module">ESTABELECIMENTO</span><br/>
+
+          <div class="field col-8">
+            <label htmlFor="nomeFantasia">NOME FANTASIA</label><br/>
+            <input type="text" formControlName="nomeFantasia" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="razaoSocial">RAZÃO SOCIAL</label><br/>
+            <input type="text" formControlName="razaoSocial" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="cnpj">CNPJ</label><br/>
+            <input type="text" formControlName="cnpj" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="email">E-MAIL</label><br/>
+            <input type="text" formControlName="email" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="telefone">TELEFONE</label><br/>
+            <input type="text" formControlName="telefone" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="categoriaNegocio">CATEGORIA DO NEGÓCIO</label><br/>
+            <input type="text" formControlName="categoriaNegocio" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="dataCriacao">DATA DE CRIAÇÃO</label><br/>
+            <input type="text" formControlName="dataCriacao" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="nomeComprovante">NOME NO COMPROVANTE</label><br/>
+            <input type="text" formControlName="nomeComprovante" class="form-control">
+          </div>
+
+          <div style="width: 100%; text-align: center;">
+            <button [disabled]="!formEstabelecimento.valid" class="p-button-success"  type="submit" pButton icon="pi pi-save">Salvar</button>
+            <button class="p-button-danger"  type="button" (click)="cancelEdit()" pButton icon="pi pi-times">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>
+
 </div>

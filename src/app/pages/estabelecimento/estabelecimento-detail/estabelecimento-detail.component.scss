@@ -1,0 +1,25 @@
+
+
+.formgrid {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 270px;
+  transition: all 0.3s ease-out;
+
+
+}
+
+.formgrid:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+input {
+  width: 200px;
+  height: 25px;
+  left: 420px;
+}
+

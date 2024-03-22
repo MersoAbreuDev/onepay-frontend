@@ -1,4 +1,6 @@
 <div class="card-container">
+
+<!-- ESTABELECIMENTO-->
 <div class="grid" style="width: 75%; display: flex; margin-left: 5%; margin-top: 0;">
 
   <form [formGroup]="formEstabelecimento" *ngIf="!isEditing; else editingMode">
@@ -104,8 +106,8 @@
   </ng-template>
 </div>
 
-
-<div class="grid" style="width: 75%; display: flex; margin-left: 5%; margin-top: 0;">
+<!-- ENDERECO-->
+<div class="grid" style="width: 1000%; display: flex; margin-left: 5%; margin-top: 0;">
 
   <form [formGroup]="formEndereco" *ngIf="!isEditing; else editingMode">
     <div class="p-fluid p-formgrid grid">

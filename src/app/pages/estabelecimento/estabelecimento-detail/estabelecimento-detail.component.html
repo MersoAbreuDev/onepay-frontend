@@ -40,7 +40,7 @@
         </div>
 
         <div style="width: 100%; text-align: center;">
-          <button pButton type="button" (click)="toggleEdit()" label="Editar" class="p-button" style="margin-top: 5px;border: 0; width: 100px;text-align: center;"></button><br/>
+          <button pButton type="button" (click)="toggleEdit()" class="p-button" style="margin-top: 5px;border: 0; width: 100px;text-align: center;">Editar</button><br/>
         </div>
       </div>
     </div>
@@ -89,13 +89,13 @@
           </div>
 
           <div class="field col-8">
-            <label htmlFor="nomeComprovante">DATA DE CRIAÇÃO</label><br/>
+            <label htmlFor="nomeComprovante">NOME NO COMPROVANTE</label><br/>
             <input type="text" formControlName="nomeComprovante" class="form-control">
           </div>
 
           <div style="width: 100%; text-align: center;">
-            <button [disabled]="!formEstabelecimento.valid" class="p-button-success" style="width: 25%;height: 38px;" type="submit" pButton icon="pi pi-save" label="Salvar"></button>
-            <button class="p-button-danger" style="width: 25%;margin-left: 15px;height: 38px;" type="button" (click)="cancelEdit()" pButton icon="pi pi-times" label="Cancelar"></button>
+            <button [disabled]="!formEstabelecimento.valid" class="p-button-success"  type="submit" pButton icon="pi pi-save">Salvar</button>
+            <button class="p-button-danger"  type="button" (click)="cancelEdit()" pButton icon="pi pi-times">Cancelar</button>
           </div>
         </div>
       </div>

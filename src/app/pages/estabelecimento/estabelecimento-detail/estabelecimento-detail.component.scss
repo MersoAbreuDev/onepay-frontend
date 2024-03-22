@@ -23,3 +23,57 @@ input {
   left: 420px;
 }
 
+.title-module {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.col-8 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilo para os botões */
+.p-button {
+  margin-top: 10px;
+  width: 100px;
+}
+
+/* Estilos para os inputs */
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para o modo de edição */
+.grid2 {
+  width: 100%;
+}
+
+
+/* Estilos para o botão de salvar */
+.p-button-success {
+  width: 25%;
+  height: 38px;
+  background-color: #007bff; /* Azul */
+  color: #fff;
+}
+
+/* Estilos para o botão de cancelar */
+.p-button-danger {
+  width: 25%;
+  margin-left: 15px;
+  height: 38px;
+  background-color: #dc3545; /* Vermelho */
+  color: #fff;
+}
+
+

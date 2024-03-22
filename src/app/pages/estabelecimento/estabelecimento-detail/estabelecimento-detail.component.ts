@@ -13,6 +13,7 @@ export class EstabelecimentoDetailComponent {
   formEndereco!:FormGroup;
   formProprietario!:FormGroup;
   formTermo!:FormGroup;
+  formDocumento!:FormGroup;
   isEditingEstabelecimento: boolean = false;
   isEditingEndereco: boolean = false;
   isEditingProprietario: boolean = false;

@@ -1,4 +1,31 @@
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 
+}
+input[type=number] {
+ -moz-appearance: textfield;
+ appearance: textfield;
+
+}
+.title-module{
+color: #1484c0;
+font-size: 16px;
+margin-top: 5px;
+}
+
+.p-fluid .p-inputtext{
+  margin-top: -14px;
+  height: 14px!important;
+
+}
+
+.field{
+  margin-bottom: 7px;
+}
+
+.field:focus {
+  color: #1484c0;
+}
 
 .formgrid {
   border-radius: 5px;
@@ -17,11 +44,6 @@
 
 }
 
-input {
-  width: 200px;
-  height: 25px;
-  left: 420px;
-}
 
 .title-module {
   font-size: 20px;
@@ -49,9 +71,17 @@ input {
   width: 100%;
   padding: 8px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #ccc; /* Cor da borda padrão */
+  border-radius: 10px; /* Borda redonda */
 }
+
+/* Estilos para a borda quando o input está em foco */
+.form-control:focus {
+  border-color: blue; /* Cor da borda quando em foco */
+  outline: none; /* Remove a borda de foco padrão do navegador */
+}
+
+
 
 /* Estilos para o modo de edição */
 .grid2 {
@@ -138,7 +168,7 @@ input {
 
 .card-container {
   display: flex; /* Torna o contêiner flexível */
-  justify-content: space-between; /* Distribui os cards uniformemente ao longo do contêiner */
+
   margin-left: 5%; /* Margem à esquerda */
   margin-top: 0;
   width: 90%; /* Largura do contêiner */

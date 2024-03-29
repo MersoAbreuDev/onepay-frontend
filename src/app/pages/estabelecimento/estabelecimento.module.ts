@@ -7,12 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponetesCustomModule } from '../../../shared/componentes-custom/componetes-custom.module';
 import { CepMaskDirective } from '../../../shared/directives/cep-mask.directive';
 import { EstabelecimentoTableComponent } from './estabelecimento-table/estabelecimento-table.component';
+import { EstabelecimentoDetailComponent } from './estabelecimento-detail/estabelecimento-detail.component';
 
 @NgModule({
   declarations: [
     EstabelecimentoFisicaFormComponent,
     CepMaskDirective,
-    EstabelecimentoTableComponent
+    EstabelecimentoTableComponent,
+    EstabelecimentoDetailComponent
 
   ],
   imports: [

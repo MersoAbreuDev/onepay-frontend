@@ -1,0 +1,348 @@
+<div class="card-container">
+
+<!-- ESTABELECIMENTO-->
+<div class="grid" style="width: 75%; display: flex; margin-left: 5%; margin-top: 0;">
+
+  <form [formGroup]="formEstabelecimento" *ngIf="!isEditingEstabelecimento; else editingModeEstabelecimento">
+    <div class="p-fluid p-formgrid grid">
+      <div class="formgrid grid">
+
+        <span class="title-module">ESTABELECIMENTO</span><br/>
+
+        <div class="field col-8">
+          <label htmlFor="nomeFantasia">NOME FANTASIA</label><br/>
+          <label htmlFor="">A2 VIAGENS E PASSEIOS</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="razaoSocial">RAZÃO SOCIAL</label><br/>
+          <label htmlFor="">A2 VIAGENS E PASSEIOS LTDA</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="cnpj">CNPJ</label><br/>
+          <label htmlFor="">39.298.360/0001-57</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="email">EMAIL</label><br/>
+          <label htmlFor="">a2viagens.alexandra&#64;gmail.com</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="telefone">TELEFONE</label><br/>
+          <label htmlFor="">(11) 4033-6162</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="categoriaNegocio">CATEGORIA DO NEGÓCIO</label><br/>
+          <label htmlFor="">Agência de Viagens e Operações de Turismo</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="dataCriacao">DATA DE CRIAÇÃO</label><br/>
+          <label htmlFor="">02/08/2022</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="nomeComprovante">NOME NO COMPROVANTE</label><br/>
+          <label htmlFor="">A2 VIAGENS E PASSEIOS</label><br/>
+        </div>
+
+        <div style="width: 100%; text-align: center;">
+          <button pButton type="button" (click)="toggleEditEstabelecimento()" class="p-button" style="margin-top: 5px;border: 0; width: 100px;text-align: center;">Editar</button><br/>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <ng-template #editingModeEstabelecimento>
+    <form [formGroup]="formEstabelecimento">
+      <div class="p-fluid p-formgrid grid">
+        <div class="formgrid grid">
+
+          <span class="title-module">ESTABELECIMENTO</span><br/>
+
+          <div class="field col-8">
+            <label htmlFor="nomeFantasia">NOME FANTASIA</label><br/>
+            <input type="text" formControlName="nomeFantasia" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="razaoSocial">RAZÃO SOCIAL</label><br/>
+            <input type="text" formControlName="razaoSocial" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="cnpj">CNPJ</label><br/>
+            <input type="text" formControlName="cnpj" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="email">E-MAIL</label><br/>
+            <input type="text" formControlName="email" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="telefone">TELEFONE</label><br/>
+            <input type="text" formControlName="telefone" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="categoriaNegocio">CATEGORIA DO NEGÓCIO</label><br/>
+            <input type="text" formControlName="categoriaNegocio" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="dataCriacao">DATA DE CRIAÇÃO</label><br/>
+            <input type="text" formControlName="dataCriacao" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="nomeComprovante">NOME NO COMPROVANTE</label><br/>
+            <input type="text" formControlName="nomeComprovante" class="form-control">
+          </div>
+
+          <div style="width: 100%; text-align: center;">
+            <button [disabled]="!formEstabelecimento.valid" class="p-button-success"  type="submit" pButton icon="pi pi-save">Salvar</button>
+            <button class="p-button-danger"  type="button" (click)="cancelEditEstabelecimento()" pButton icon="pi pi-times">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>
+
+<!-- ENDERECO-->
+<div class="grid" style="width: 1000%; display: flex; margin-left: 5%; margin-top: 0;">
+
+  <form [formGroup]="formEndereco" *ngIf="!isEditingEndereco; else editingModeEndereco">
+    <div class="p-fluid p-formgrid grid">
+      <div class="formgrid grid2">
+
+        <span class="title-module">ENDEREÇO</span><br/>
+
+        <div class="field col-8">
+          <label htmlFor="cep">CEP</label><br/>
+          <label htmlFor="">12145000</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="logradouro">LOGRADOURO</label><br/>
+          <label htmlFor="">Rua Eunice Ferraz Fernandes</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="numero">NÚMERO</label><br/>
+          <label htmlFor="">152</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="complemento">COMPLEMENTO</label><br/>
+          <label htmlFor="">---</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="bairro">BAIRRO</label><br/>
+          <label htmlFor="">Jardim do Lago</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="cidade">CIDADE</label><br/>
+          <label htmlFor="">Bragança Paulista</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="estado">ESTADO</label><br/>
+          <label htmlFor="">SP</label><br/>
+        </div>
+
+        <div style="width: 100%; text-align: center;">
+          <button pButton type="button" (click)="toggleEditEndereco()" class="p-button" style="margin-top: 5px;border: 0; width: 100px;text-align: center;">Editar</button><br/>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <ng-template #editingModeEndereco>
+    <form [formGroup]="formEndereco">
+      <div class="p-fluid p-formgrid grid">
+        <div class="formgrid grid2">
+
+          <span class="title-module">ENDEREÇO</span><br/>
+
+          <div class="field col-8">
+            <label htmlFor="cep">CEP</label><br/>
+            <input type="text" formControlName="cep" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="logradouro">RLOGRADOURO</label><br/>
+            <input type="text" formControlName="logradouro" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="numero">NÚMERO</label><br/>
+            <input type="text" formControlName="numero" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="complemento">COMPLEMENTO</label><br/>
+            <input type="text" formControlName="complemento" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="bairro">BAIRRO</label><br/>
+            <input type="text" formControlName="bairro" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="cidade">CIDADE</label><br/>
+            <input type="text" formControlName="cidade" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="estado">ESTADO</label><br/>
+            <input type="text" formControlName="estado" class="form-control">
+          </div>
+
+          <div style="width: 100%; text-align: center;">
+            <button [disabled]="!formEndereco.valid" class="p-button-success"  type="submit1" pButton icon="pi pi-save">Salvar</button>
+            <button class="p-button-danger"  type="button" (click)="cancelEditEndereco()" pButton icon="pi pi-times">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>
+
+
+<!-- PROPRIETARIO-->
+<div class="grid" style="width: 3000%; display: flex; margin-left: 5%; margin-top: 0;">
+
+  <form [formGroup]="formProprietario" *ngIf="!isEditingProprietario; else editingModeProprietario">
+    <div class="p-fluid p-formgrid grid">
+      <div class="formgrid grid3">
+
+        <span class="title-module">PROPRIETARIO</span><br/>
+
+        <div class="field col-8">
+          <label htmlFor="cpf">CPF</label><br/>
+          <label htmlFor="">343.839.118-03</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="nome">NOME</label><br/>
+          <label htmlFor="">Alexandra Matos de Oliveira Castro Melim</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="dataNascimento">DATA DE NASCIMENTO</label><br/>
+          <label htmlFor="">14/08/1982</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="telefone">TELEFONE</label><br/>
+          <label htmlFor="">19981322524</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="email">EMAIL</label><br/>
+          <label htmlFor="">a2viagens.alexandra&#64;gmail.com</label><br/>
+        </div>
+
+        <div style="width: 100%; text-align: center;">
+          <button pButton type="button" (click)="toggleEditProprietario()" class="p-button" style="margin-top: 5px;border: 0; width: 100px;text-align: center;">Editar</button><br/>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <ng-template #editingModeProprietario>
+    <form [formGroup]="formProprietario">
+      <div class="p-fluid p-formgrid grid">
+        <div class="formgrid grid3">
+
+          <span class="title-module">PROPRIETARIO</span><br/>
+
+          <div class="field col-8">
+            <label htmlFor="cpf">CPF</label><br/>
+            <input type="text" formControlName="cpf" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="nome">NOME</label><br/>
+            <input type="text" formControlName="nome" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="dataNascimento">DATA DE NASCIMENTO</label><br/>
+            <input type="date" formControlName="dataNascimento" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="telefone">TELEFONE</label><br/>
+            <input type="text" formControlName="telefone" class="form-control">
+          </div>
+
+          <div class="field col-8">
+            <label htmlFor="email">EMAIL</label><br/>
+            <input type="text" formControlName="email" class="form-control">
+          </div>
+
+          <div style="width: 100%; text-align: center;">
+            <button [disabled]="!formProprietario.valid" class="p-button-success"  type="submit2" pButton icon="pi pi-save">Salvar</button>
+            <button class="p-button-danger"  type="button" (click)="cancelEditProprietario()" pButton icon="pi pi-times">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>
+
+<!-- ACEITE TERMOS-->
+<div class="grid" style="width: 8000%; display: flex; margin-left: 5%; margin-top: 0;">
+
+  <form [formGroup]="formTermo">
+    <div class="p-fluid p-formgrid grid">
+      <div class="formgrid grid4">
+
+        <span class="title-module">ACEITE NOS TERMOS</span><br/>
+
+        <div class="field col-8">
+          <label htmlFor="termo">TERMO ACEITO?</label><br/>
+          <label htmlFor="">Sim</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="dataAceite">DATA DE ACEITE</label><br/>
+          <label htmlFor="">02/08/2022 19:46:31</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="usuario">USUÁRIO QUE ACEITOU</label><br/>
+          <label htmlFor="">A2 VIAGENS E PASSEIOS</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="telefone">TELEFONE</label><br/>
+          <label htmlFor="">19981322524</label><br/>
+        </div>
+        <div class="field col-8">
+          <label htmlFor="email">EMAIL</label><br/>
+          <label htmlFor="">a2viagens.alexandra&#64;gmail.com</label><br/>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- DOCUMENTOS-->
+<div class="card">
+  <div class="card-content">
+    <span class="title-module">DOCUMENTOS</span><br/>
+    <div class="field-group">
+      <div class="field">
+        <label for="">CNPJ/DOCUMENTO DE IDENTIFICAÇÃO </label><br/>
+        <label for="">CARTAO CNPJ A2 VIAGENS.pdf</label><br/>
+      </div>
+      <div class="field">
+        <label for="">RG/CPF/CNH DO PROPRIETARIO</label><br/>
+        <label for="">RG ALEXANDRA - FRENTE E VERSO.pdf</label><br/>
+      </div>
+      <div class="field">
+        <label for="">COMPROVANTE DE ATIVIDADE</label><br/>
+        <label for="">CERTIFICADO_CADASTUR.pdf</label><br/>
+      </div>
+      <div class="field">
+        <label for="">COMPROVANTE DE ENDEREÇO</label><br/>
+        <label for="">CAPTURA.png</label><br/>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>

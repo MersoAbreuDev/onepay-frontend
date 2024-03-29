@@ -1,0 +1,193 @@
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
+}
+input[type=number] {
+ -moz-appearance: textfield;
+ appearance: textfield;
+
+}
+.title-module{
+color: #1484c0;
+font-size: 16px;
+margin-top: 5px;
+}
+
+.p-fluid .p-inputtext{
+  margin-top: -14px;
+  height: 14px!important;
+
+}
+
+.field{
+  margin-bottom: 7px;
+}
+
+.field:focus {
+  color: #1484c0;
+}
+
+.formgrid {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 270px;
+  transition: all 0.3s ease-out;
+
+
+}
+
+.formgrid:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+
+.title-module {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.col-8 {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* Estilo para os botões */
+.p-button {
+  margin-top: 10px;
+  width: 100px;
+}
+
+/* Estilos para os inputs */
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Cor da borda padrão */
+  border-radius: 10px; /* Borda redonda */
+}
+
+/* Estilos para a borda quando o input está em foco */
+.form-control:focus {
+  border-color: blue; /* Cor da borda quando em foco */
+  outline: none; /* Remove a borda de foco padrão do navegador */
+}
+
+
+
+/* Estilos para o modo de edição */
+.grid2 {
+  width: 100%;
+}
+
+
+/* Estilos para o botão de salvar */
+.p-button-success {
+  width: 25%;
+  height: 38px;
+  background-color: #007bff; /* Azul */
+  color: #fff;
+}
+
+/* Estilos para o botão de cancelar */
+.p-button-danger {
+  width: 25%;
+  margin-left: 15px;
+  height: 38px;
+  background-color: #dc3545; /* Vermelho */
+  color: #fff;
+}
+
+
+.formgrid2 {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 270px;
+  transition: all 0.3s ease-out;
+
+
+}
+
+.formgrid2:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+.formgrid3 {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 270px;
+  transition: all 0.3s ease-out;
+
+
+}
+
+.formgrid3:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+.formgrid4 {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 7px rgba(50, 50, 50, 0.22);
+  padding: 20px;
+  margin: 20px;
+  width: 270px;
+  transition: all 0.3s ease-out;
+}
+
+.formgrid4:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+
+}
+
+.field-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.field {
+  flex: 1;
+  margin-right: 10px; /* Espaçamento entre os campos */
+}
+
+.card-container {
+  display: flex; /* Torna o contêiner flexível */
+
+  margin-left: 5%; /* Margem à esquerda */
+  margin-top: 0;
+  width: 90%; /* Largura do contêiner */
+}
+
+.card {
+  width: calc(50% - 10px); /* Largura de cada card (50% da largura do contêiner menos espaçamento) */
+  margin-bottom: 20px; /* Espaçamento entre os cards */
+  border: 1px solid #ccc; /* Borda para os cards */
+  padding: 20px; /* Espaçamento interno dos cards */
+  box-sizing: border-box; /* Garante que a largura dos cards inclua a espessura da borda */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centralizar horizontalmente */
+}
+
+.title-module {
+  text-align: center; /* Centralizar o texto */
+}

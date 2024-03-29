@@ -80,6 +80,13 @@ export class SidebarComponent {
             ],
         }, 
         {
+          label: 'Vendas',
+          icon: 'pi pi-money-bill',
+          title: 'Vendas',
+          routerLink:'vendas',
+          
+        }, 
+        {
           label: 'Planos',
           icon: 'pi pi-verified',
           title: 'Planos',

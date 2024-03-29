@@ -1,0 +1,23 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info-item {
+    width: 45%;
+  }
+  
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}

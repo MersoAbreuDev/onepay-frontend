@@ -46,21 +46,14 @@ export class RecebiveisComponent {
 
 
     this.filteredData = [
-      { estabelecimento: 'local01', documento: '100', date: '2024-03-01', cartao: 'Credit', boleto: '1234567890', estorno: 'sim',total:'1238' },
-      { estabelecimento: 'local01', documento: '150', date: '2024-03-01', cartao: 'Debit', boleto: '0987654321', estorno: 'nao',total:'1239' },
-      { estabelecimento: 'local01', documento: '200', date: '2024-03-01', cartao: 'Credit', boleto: '5678901234', estorno: 'sim',total:'123' },
-      { estabelecimento: 'local01', documento: '120', date: '2024-03-01', cartao: 'Debit', boleto: '5432109876', estorno: 'sim',total:'1223' },
-      { estabelecimento: 'local01', documento: '180', date: '2024-03-01', cartao: 'Credit', boleto: '9876543210', estorno: 'nao',total:'1283' },
-      { estabelecimento: 'local01', documento: '90', date: '2024-03-01', cartao: 'Debit', boleto: '4321098765', estorno: 'sim',total:'13323' }
+      { estabelecimento: 'local01', documento: 'doc01', date: '2024-03-01', cartao: 'Credit', boleto: '1234567890', estorno: 'sim',cancelar:'sim',total:'1238' },
+      { estabelecimento: 'local02', documento: 'doc02', date: '2024-03-02', cartao: 'Debit', boleto: '0987654321', estorno: 'nao',total:'1239' },
+      { estabelecimento: 'local03', documento: 'doc03', date: '2024-03-03', cartao: 'Credit', boleto: '5678901234', estorno: 'sim',cancelar:'sim',total:'123' },
+      { estabelecimento: 'local04', documento: 'doc04', date: '2024-03-04', cartao: 'Debit', boleto: '5432109876', estorno: 'sim',total:'1223' },
+      { estabelecimento: 'local05', documento: 'doc05', date: '2024-03-05', cartao: 'Credit', boleto: '9876543210', estorno: 'nao',cancelar:'sim',total:'1283' },
+      { estabelecimento: 'local06', documento: 'doc10', date: '2024-03-06', cartao: 'Debit', boleto: '4321098765', estorno: 'sim',total:'13323' }
     ];
   }
-
-
-  showDetails(idDetail: any) {
-    console.log("Chamou", idDetail);
-    this.router.navigateByUrl('/estabelecimento/details');
-  }
-
 
   search() {
     // Implement search functionality based on filterForm values

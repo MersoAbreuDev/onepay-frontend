@@ -1,1 +1,38 @@
-<p>recebiveis works!</p>
+<h1 class="title">Recebíveis</h1>
+
+<div class="filter-container">
+  <form [formGroup]="filterForm" (ngSubmit)="search()" class="filter-form">
+    <div class="filter-row">
+      <input type="text" placeholder="CPF/CNPJ" formControlName="cpfCnpj" class="p-inputtext p-component filter-input">
+      <input type="text" placeholder="Estabelecimento" formControlName="account" class="p-inputtext p-component filter-input">
+      <button type="button" (click)="clearFilters()" pButton class="p-button filter-button">Limpar Pesquisa</button>
+      <button type="submit" pButton class="p-button filter-button">Buscar</button>
+    </div>
+  </form>
+</div>
+
+<div class="table-container" style="margin-top: 25px;">
+  <p-table [columns]="cols" [value]="filteredData" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,20,50]"
+    [resizableColumns]="true" [responsive]="true" [autoLayout]="true" class="p-datatable table-config" >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td>{{rowData.estabelecimento}}</td>
+        <td>{{rowData.documento}}</td>
+        <td>{{rowData.date}}</td>
+        <td>{{rowData.cartao}}</td>
+        <td>{{rowData.boleto}}</td>
+        <td>{{rowData.estorno}}</td>
+        <td>{{rowData.cancelar}}</td>
+        <td>{{rowData.total}}</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</div>

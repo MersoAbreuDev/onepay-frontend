@@ -87,6 +87,13 @@ export class SidebarComponent {
           
         }, 
         {
+          label: 'Recebiveis',
+          icon: 'pi pi-check-square',
+          title: 'Recebiveis',
+          routerLink:'recebiveis',
+          
+        }, 
+        {
           label: 'Planos',
           icon: 'pi pi-verified',
           title: 'Planos',

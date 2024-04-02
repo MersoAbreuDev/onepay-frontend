@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'configuracao',
     loadChildren: () => import('./pages/configuration/configuration.module').then( m => m.ConfigurationModule),
   },
+  {
+    path: 'recebiveis',
+    loadChildren: () => import('./pages/recebiveis/recebiveis.module').then( m => m.RecebiveisModule),
+  },
 ];
 
 @NgModule({

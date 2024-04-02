@@ -1,0 +1,209 @@
+
+
+  .filter-button {
+    margin-left: 5px;
+    background-color: #0f3387;
+  }
+  
+  .table-container {
+    text-align: center;
+    margin-top: 20px;
+    overflow-y: auto;
+  }
+
+  .table-config{
+    width: 100%;
+  }
+
+  .table-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding-bottom: 50px;
+  }
+  .filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.field {
+    flex: 1 0 calc(25% - 20px); // Isso permite que os campos ocupem 25% da linha e quebrem para a próxima linha se necessário
+    margin: 10px;
+    position: relative;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 5px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .field {
+        flex: 1 0 calc(50% - 20px); // Em telas menores, os campos ocupam 50% da linha
+    }
+}
+
+@media (max-width: 480px) {
+    .field {
+        flex: 1 0 100%; // Em telas muito pequenas, os campos ocupam 100% da linha
+    }
+}
+
+.title{
+    color: #1484c0;
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: center; // Center align the title
+}
+
+.filter-container {
+    width: 100%;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.field {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.field:last-child {
+    margin-right: 0;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input, select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 5px;
+    width: 100%;
+}
+
+select {
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23ccc" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>') no-repeat right .75rem center/8px 10px;
+    background-color: #fff;
+    cursor: pointer;
+    padding-right: 1.5rem;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    margin: 0 5px;
+    background-color: #0f3387;
+    color: #FFFF;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.summary-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.card {
+    flex: 1;
+    margin: 10px;
+    max-width: 450px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f6f6f6; /* Cinza fraco */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.card p {
+    color: #000; /* Cor padrão para o texto */
+    font-weight: 400; /* Peso da fonte padrão */
+}
+
+.card .aprovado {
+    color: green; /* Cor verde para o status "Aprovado" */
+    font-weight: 700; /* Peso da fonte 500 */
+}
+
+.card .pendente {
+    color: orange; /* Cor laranja para o status "Pendente" */
+    font-weight: 700; /* Peso da fonte 500 */
+}
+
+.card .falhado {
+    color: red; /* Cor vermelha para o status "Falhado" */
+    font-weight: 700; /* Peso da fonte 500 */
+}
+
+.card .cancelado {
+    color: red; /* Cor azul para o status "Cancelado" */
+    font-weight: 700; /* Peso da fonte 500 */
+}
+
+.card .estornado {
+    color: red; /* Cor roxa para o status "Estornado" */
+    font-weight: 700; /* Peso da fonte 500 */
+}
+.card-table {
+    display: table;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+    margin: 10px 0; 
+    cursor: pointer;
+  }
+
+  .card-table:hover{
+    background-color: #f6f6f6; /* Cinza fraco */
+  }
+  
+  .custom-page-container {
+    max-height: 100vh;
+    overflow: auto;
+    padding: 45px;
+  }
+
+.table-container{
+    overflow: auto;
+}

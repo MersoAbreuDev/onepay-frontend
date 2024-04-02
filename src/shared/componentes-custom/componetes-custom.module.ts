@@ -36,6 +36,7 @@ import { CustomCardComponent } from './custom-card/custom-card.component';
 import { StepsModule } from 'primeng/steps';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { DialogService } from 'primeng/dynamicdialog';
+import { AccordionModule } from 'primeng/accordion';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { DialogService } from 'primeng/dynamicdialog';
     CustomCardComponent
   ],
   imports: [
+    AccordionModule,
     CardModule,
     CommonModule,
     SidebarModule,
@@ -85,6 +87,7 @@ import { DialogService } from 'primeng/dynamicdialog';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA],
   exports:[
+    AccordionModule,
     SidebarComponent,
     ToastModule,
     DropdownModule,

@@ -1,0 +1,138 @@
+<!-- app.component.html -->
+<div class="custom-page-container">
+    <p-accordion>
+        <p-accordionTab header="Filtros">
+            <div class="filter-container">
+                <h1 class="title">Filtros</h1>
+                <form [formGroup]="filterForm" class="filter-form">
+                    <div class="row">
+                        <div class="field">
+                            <label for="cpfCnpj">CPF/CNPJ</label>
+                            <input formControlName="cpfCnpj" id="cpfCnpj" type="text" />
+                        </div>
+                        <div class="field">
+                            <label for="estabelecimento">Estabelecimento</label>
+                            <input formControlName="estabelecimento" id="estabelecimento" type="text" />
+                        </div>
+                        <div class="field">
+                            <label for="cliente">Cliente</label>
+                            <input formControlName="cliente" id="cliente" type="text" />
+                        </div>
+                        <div class="field">
+                            <label for="dataDe">Data De</label>
+                            <input formControlName="dataDe" id="dataDe" type="date" />
+                        </div>
+                        <div class="field">
+                            <label for="dataAte">Data Até</label>
+                            <input formControlName="dataAte" id="dataAte" type="date" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            <label for="bandeira">Bandeira</label>
+                            <select formControlName="bandeira" id="bandeira">
+                                <option value="">Selecione...</option>
+                                <option value="Elo">Elo</option>
+                                <option value="Visa">Visa</option>
+                                <option value="Mastercard">Mastercard</option>
+                                <option value="Dinner">Dinner</option>
+                                <!-- Adicione mais opções conforme necessário -->
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="formaPagamento">Forma de Pagamento</label>
+                            <select formControlName="formaPagamento" id="formaPagamento">
+                                <option value="">Selecione...</option>
+                                <option value="Debito">Débito</option>
+                                <option value="Credito">Crédito</option>
+                                <option value="Pix">Pix</option>
+                                <!-- Adicione mais opções conforme necessário -->
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="statusVenda">Status da Venda</label>
+                            <select formControlName="statusVenda" id="statusVenda">
+                                <option value="">Selecione...</option>
+                                <option value="Aprovado">Aprovado</option>
+                                <option value="Pendente">Pendente</option>
+                                <option value="Falhado">Falhado</option>
+                                <option value="Cancelado">Cancelado</option>
+                                <option value="Estornado">Estornado</option>
+                                <!-- Adicione mais opções conforme necessário -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="filter-button">Buscar</button>
+                        <button type="reset" class="filter-button">Limpar</button>
+                    </div>
+                </form>
+            </div>
+        </p-accordionTab>
+      </p-accordion>
+    
+    
+    <div class="summary-container">
+        <div class="card">
+            <h2>Total de Vendas</h2>
+            <p style="font-weight: 900; font-size: 20px;">235.452</p>
+        </div>
+        <div class="card">
+            <h2>Status das Vendas</h2>
+            <p style="font-weight: 600;font-size: 16px;">Aprovado: <span class="aprovado">R$ 250.631,31</span></p>
+            <p style="font-weight: 600;font-size: 16px;">Pendente: <span class="pendente">R$ 250.631,31</span></p>
+            <p style="font-weight: 600;font-size: 16px;">Falhado: <span class="falhado">R$ 250.631,31</span></p>
+            <p style="font-weight: 600;font-size: 16px;">Cancelado: <span class="cancelado">R$ 250.631,31</span></p>
+            <p style="font-weight: 600;font-size: 16px;">Estornado: <span class="estornado">R$ 250.631,31</span></p>
+        </div>
+        <div class="card">
+            <h2 >Resumo</h2>
+            <p  style="font-weight: 900; font-size: 16px;">Taxa: R$ 4200,00</p>
+            <p  style="font-weight: 900; font-size: 16px;">Split: R$ 4200,00</p>
+            <p  style="font-weight: 900; font-size: 16px;">Líquido: R$ 4200,00</p>
+        </div>
+    </div>
+    <div class="table-container table-list">
+        <p-table  [columns]="cols" [value]="tableData" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,20,50]"
+          [resizableColumns]="true" [responsive]="true" [autoLayout]="true" class="p-datatable table-config" >
+          <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr class="card-table"  (click)="navigateToDetails(rowData)">
+                <td>
+                    <p>
+                      <i class="pi pi-check-circle" style="color: green;"></i>
+                    </p>
+                  </td>
+                <td>
+                <h3>CMT</h3>
+                <p>{{rowData.cmt}}</p>
+                </td>
+                <td>
+                <h3>Valor</h3>
+                <p>{{rowData.value}}</p>
+                </td>
+                <td>
+                <h3>Taxas</h3>
+                <p>{{rowData.taxes}}</p>
+                </td>
+                <td>
+                <h3>Líquido</h3>
+                <p>{{rowData.net}}</p>
+                </td>
+                <td>
+                <h3>Vencimento</h3>
+                <p>{{rowData.dueDate}}</p>
+                </td>
+                <td>
+                <h3>Pedido de Venda</h3>
+                <p>{{rowData.saleOrder}}</p>
+                </td>
+                <td>
+                <h3>Cliente</h3>
+                <p>{{rowData.client}}</p>
+                </td>
+              </tr>
+          </ng-template>
+        </p-table>
+    </div>
+</div>
+

@@ -32,6 +32,11 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
+    path: 'vendas',
+    loadChildren: () => import('./pages/vendas/vendas.module').then( m => m.VendasModule),
+    canLoad: [AuthGuard]
+  },
+  {
     path: 'configuracao',
     loadChildren: () => import('./pages/configuration/configuration.module').then( m => m.ConfigurationModule),
   },

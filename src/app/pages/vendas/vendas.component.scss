@@ -12,12 +12,14 @@
   }
 
   .table-config{
-    width: 80%;
+    width: 100%;
   }
 
   .table-container {
-    margin: 0 auto;
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
     padding-bottom: 50px;
   }
   .filter-form {
@@ -181,17 +183,19 @@ select {
     font-weight: 700; /* Peso da fonte 500 */
 }
 .card-table {
+    display: table;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: 0.3s;
     box-sizing: border-box;
-    background-color: #f6f6f6; /* Cinza fraco */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  }
-  
-  .card-table {
-    margin: 5px 0; 
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+    margin: 10px 0; 
     cursor: pointer;
+  }
+
+  .card-table:hover{
+    background-color: #f6f6f6; /* Cinza fraco */
   }
   
   .custom-page-container {

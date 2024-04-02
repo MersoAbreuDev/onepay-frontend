@@ -5,6 +5,10 @@
     padding: 20px;
     width: 100%;
   }
+
+  .card-container{
+    margin: 10px;
+  }
   
   .info {
     display: flex;
@@ -14,10 +18,17 @@
   .info-item {
     width: 45%;
   }
-  
-.card-container {
+
+  .p-grid{
     display: flex;
     justify-content: center;
     margin-left: 20px;
     margin-right: 20px;
+  }
+  
+
+.custom-page-container {
+  max-height: 100vh;
+  overflow: auto;
+  padding: 45px;
 }
